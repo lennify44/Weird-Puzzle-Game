@@ -1,0 +1,154 @@
+<title>Leuchtfeuer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=IM+Fell+English+SC&display=swap">
+<style>
+/*CSS*/
+</style>
+<div id="app">
+  <canvas id="cv" aria-label="Game board"></canvas>
+
+  <section id="scr-title" class="screen">
+    <div class="title-block">
+      <p class="eyebrow" data-t="tagline"></p>
+      <h1>Leuchtfeuer</h1>
+      <p class="sub" data-t="subtitle"></p>
+      <nav class="menu">
+        <button id="btn-play" class="btn primary" type="button"></button>
+        <button id="btn-chart" class="btn" type="button" data-t="chart"></button>
+        <button id="btn-options" class="btn" type="button" data-t="options"></button>
+      </nav>
+    </div>
+    <p class="title-foot" data-t="titleFoot"></p>
+  </section>
+
+  <section id="scr-chart" class="screen" hidden>
+    <aside class="side">
+      <div class="side-top">
+        <button id="chart-back" class="btn" type="button" data-t="back"></button>
+        <span id="chart-progress" class="progress"></span>
+      </div>
+      <div class="chap-head">
+        <p class="eyebrow" id="chap-eyebrow"></p>
+        <h2 id="chap-name"></h2>
+        <div class="chap-meta"><span class="char" id="chap-char"></span><span class="mech" id="chap-mech"></span></div>
+      </div>
+      <p class="blurb" id="chap-blurb"></p>
+      <ol class="levels" id="chap-levels"></ol>
+      <div class="chap-nav">
+        <button id="chap-prev" class="btn" type="button" aria-label="Previous light">‹</button>
+        <button id="chap-next" class="btn" type="button" aria-label="Next light">›</button>
+      </div>
+    </aside>
+  </section>
+
+  <section id="scr-play" class="screen" hidden>
+    <header class="hud">
+      <div class="hud-l">
+        <span class="eyebrow" id="hud-chapter"></span>
+        <strong id="hud-name"></strong>
+      </div>
+      <div class="hud-r">
+        <span class="count"><span data-t="moves"></span> <b id="hud-moves">0</b> · <span data-t="par"></span> <b id="hud-par">0</b></span>
+        <button class="icon-btn" id="btn-hint" type="button" data-tt="hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>
+        </button>
+        <button class="icon-btn" id="btn-undo" type="button" data-tt="undo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>
+        </button>
+        <button class="icon-btn" id="btn-restart" type="button" data-tt="restart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+        </button>
+        <button class="icon-btn" id="btn-menu" type="button" data-tt="menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </header>
+    <p id="hint" class="hint" hidden></p>
+    <p id="toast" class="toast" hidden></p>
+
+    <div id="win-veil" class="veil" hidden>
+      <div class="panel" role="dialog" aria-labelledby="win-title">
+        <p class="eyebrow" id="win-eyebrow"></p>
+        <h2 id="win-title"></h2>
+        <dl class="stats">
+          <div><dt data-t="moves"></dt><dd id="win-moves"></dd></div>
+          <div><dt data-t="par"></dt><dd id="win-par"></dd></div>
+        </dl>
+        <p class="par-note" id="win-note"></p>
+        <div class="row">
+          <button id="win-again" class="btn" type="button" data-t="again"></button>
+          <button id="win-next" class="btn primary" type="button"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="pause-veil" class="veil" hidden>
+      <div class="panel" role="dialog" aria-labelledby="pause-title">
+        <h2 id="pause-title" data-t="paused"></h2>
+        <dl class="keys">
+          <dt data-t="kMove"></dt><dd data-t="kMoveD"></dd>
+          <dt>Z · ⌫</dt><dd data-t="kUndo"></dd>
+          <dt>R</dt><dd data-t="kRestart"></dd>
+          <dt>H</dt><dd data-t="kHint"></dd>
+          <dt>Esc</dt><dd data-t="kMenu"></dd>
+        </dl>
+        <div class="col">
+          <button id="pause-resume" class="btn primary" type="button" data-t="resume"></button>
+          <button id="pause-chart" class="btn" type="button" data-t="chart"></button>
+          <button id="pause-options" class="btn" type="button" data-t="options"></button>
+          <button id="pause-title-btn" class="btn" type="button" data-t="toTitle"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scr-options" class="screen" hidden>
+    <div class="veil">
+      <div class="panel" role="dialog" aria-labelledby="opt-title">
+        <h2 id="opt-title" data-t="options"></h2>
+        <div class="opt">
+          <label for="opt-sfx" data-t="sfx"></label>
+          <input id="opt-sfx" type="range" min="0" max="100" step="5">
+        </div>
+        <div class="opt">
+          <label for="opt-music" data-t="music"></label>
+          <input id="opt-music" type="range" min="0" max="100" step="5">
+        </div>
+        <div class="opt">
+          <label data-t="language"></label>
+          <div class="seg">
+            <button id="opt-en" class="btn" type="button">English</button>
+            <button id="opt-de" class="btn" type="button">Deutsch</button>
+          </div>
+        </div>
+        <div class="opt">
+          <label data-t="progress"></label>
+          <button id="opt-reset" class="btn danger" type="button"></button>
+        </div>
+        <button id="opt-back" class="btn primary" type="button" data-t="done"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="scr-ending" class="screen" hidden>
+    <div class="end-card fade-in">
+      <p class="eyebrow" data-t="endEyebrow"></p>
+      <h2 data-t="endTitle"></h2>
+      <p data-t="endText"></p>
+      <p class="credits" id="end-stats"></p>
+      <p class="credits" data-t="credits"></p>
+      <button id="end-back" class="btn primary" type="button" data-t="chart"></button>
+    </div>
+  </section>
+</div>
+<script id="core-src">
+/*CORE*/
+</script>
+<script>
+const LEVEL_TEXT = __LEVELS__;
+const PARS = __PARS__;
+</script>
+<script>
+/*GAME*/
+</script>

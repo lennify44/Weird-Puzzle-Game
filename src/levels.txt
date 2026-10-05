@@ -1,0 +1,361 @@
+; Leuchtfeuer – Level
+; #  Wand        .  Boden       ~  Wasser      _  Abgrund (begehbar, solange Licht darüber läuft)
+; P  Spieler     > < ^ v  Lampe (Strahlrichtung)          *  Kristall (muss leuchten)
+; / \  Spiegel (schiebbar)    s S  Teilspiegel / \ (schiebbar)    B  Kiste
+; r R  Drehspiegel / \ (fest, dreht sich beim Anstoßen)          f F  fester Spiegel / \
+
+@level 1-1
+@name First Light | Erstes Licht
+@hint Push the mirror into the beam. Light the crystal to finish. | Schieb den Spiegel in den Strahl. Bring den Kristall zum Leuchten.
+#######
+#>..\.#
+#.....#
+#..P..#
+#....*#
+#######
+
+@level 1-2
+@name Which Way | Welche Richtung
+@hint A mirror's angle decides where the light goes. Z undoes a move, R restarts. | Der Winkel des Spiegels entscheidet, wohin das Licht geht. Z nimmt einen Zug zurück, R startet neu.
+#########
+#.....*.#
+#>......#
+#.......#
+#..P/.\.#
+#.......#
+#########
+
+@level 1-3
+@name Through the Glass | Durchs Glas
+@hint Crystals let light pass through. Light all of them at once. | Kristalle lassen Licht hindurch. Alle müssen gleichzeitig leuchten.
+##########
+#>...\...#
+#........#
+#....*...#
+#*...../.#
+#......P.#
+##########
+
+@level 1-4
+@name Both Faces | Zwei Seiten
+@hint Mirrors are silvered on both sides. | Spiegel sind auf beiden Seiten verspiegelt.
+###########
+#....*....#
+#.........#
+#>.......<#
+#.........#
+#.P...../.#
+#....*....#
+###########
+
+@level 1-5
+@name Lantern Store | Lampenlager
+########
+#..../.#
+#.#\.#P#
+#..../.#
+#......#
+#.*...^#
+########
+
+@level 1-6
+@name The Long Way Round | Der lange Weg
+##########
+#>.......#
+#.######.#
+#.#*...#.#
+#.#.##.#.#
+#.\..P...#
+#...\./..#
+##########
+
+@level 2-1
+@name Stepping Stone | Trittstein
+@hint Push a crate into the water to make solid ground. | Schieb eine Kiste ins Wasser, dann wird es fester Boden.
+#########
+#>...~..#
+#....~..#
+#.PB.~.\#
+#....~..#
+#....~.*#
+#########
+
+@level 2-2
+@name Moat | Burggraben
+@hint Light crosses water. You don't. | Licht kommt übers Wasser. Du nicht.
+##########
+#>.......#
+#.~~~~~..#
+#.~.*.~..#
+#.~..\~/.#
+#.~~.~~PB#
+#....B...#
+##########
+
+@level 2-3
+@name Tidal Channel | Priel
+###########
+#>....~...#
+#..PB.~...#
+#~~.~~~.*.#
+#...\.~B..#
+#./...~...#
+###########
+
+@level 2-4
+@name Ferry | Fähre
+##########
+#>...~...#
+#....~...#
+#.PB.~.*.#
+#.\/.~...#
+#....~...#
+##########
+
+@level 2-5
+@name Low Tide | Niedrigwasser
+#########
+###P....#
+#>..B...#
+#..~../.#
+#*.#.\.##
+#..~....#
+#########
+
+@level 2-6
+@name Twice Over | Zweimal
+###########
+#.P/...\..#
+#.........#
+#####.##./#
+#####~##..#
+#>..~/~...#
+####.~.####
+####...####
+####.*.####
+###########
+
+@level 3-1
+@name Walking on Light | Auf Licht gehen
+@hint Light shining across a gap is solid enough to walk on. | Licht, das über einen Spalt fällt, trägt dich.
+##########
+#>..___..#
+#...___..#
+#.P.___\.#
+#...___..#
+#...___*.#
+##########
+
+@level 3-2
+@name Far Side | Drüben
+###########
+#>...__...#
+#....__./.#
+#.*..__/..#
+#.P..__.\.#
+#....__...#
+###########
+
+@level 3-3
+@name Two Rifts | Zwei Spalten
+############
+#>..__..__.#
+#./.__.\__.#
+#.P.__..__.#
+#.\.__./__.#
+#...__..__*#
+############
+
+@level 3-4
+@name One Way | Einbahnstraße
+############
+#>...__...v#
+#....__....#
+#.\..__....#
+#../.__./..#
+#.P..__....#
+#*...__.*..#
+############
+
+@level 3-5
+@name Crow's Nest | Krähennest
+#########
+#*.#...v#
+#.....#.#
+#.......#
+#...\#._#
+#._/.#_.#
+##P.....#
+#########
+
+@level 3-6
+@name Crevices | Ritzen
+#########
+#>......#
+#*.#...##
+#...P/._#
+#....\..#
+##.#.._.#
+#.#_....#
+#########
+
+@level 4-1
+@name Half and Half | Halbe-halbe
+@hint Half-mirrors let the light through and turn a copy of it. | Halbspiegel lassen das Licht durch und lenken eine Kopie davon ab.
+##########
+#>......*#
+#........#
+#...S....#
+#..P.....#
+#...*....#
+##########
+
+@level 4-2
+@name Glasshouse | Glashaus
+########
+##./...#
+##...P.#
+#*.S...#
+#..\...#
+#.^*#..#
+########
+
+@level 4-3
+@name Bridge and Lens | Brücke und Linse
+###########
+#>...__...#
+#../.__...#
+#.PS.__.*.#
+#...\__...#
+#.*..__...#
+###########
+
+@level 4-4
+@name Prism | Prisma
+########
+#....#v#
+#./....#
+#..\S.*#
+#......#
+#.*..P.#
+########
+
+@level 4-5
+@name Shared Light | Geteiltes Licht
+###########
+#>...__...#
+#../.__...#
+#.P\S__.*.#
+#....__...#
+#.*..__...#
+###########
+
+@level 4-6
+@name The Two Sisters | Zwei Schwestern
+@hint Light travels over open water to a tower you can't reach. | Licht reist übers offene Wasser zu einem Turm, den du nicht erreichst.
+######   ######
+#>....   ....*#
+#.S..#   #....#
+#.....   ..F..#
+#.S.P#   #.*..#
+#..*.#   #....#
+######   ######
+
+@level 5-1
+@name Bump | Anstoßen
+@hint Bolted mirrors don't move. Walk into one to turn it. | Festgeschraubte Spiegel bewegen sich nicht. Lauf dagegen, um sie zu drehen.
+#########
+#>...r..#
+#.......#
+#..P....#
+#....r.*#
+#.......#
+#########
+
+@level 5-2
+@name Windmill | Windmühle
+#########
+#.#..##.#
+#>r...*.#
+#....R.##
+#.P\/#.##
+#.......#
+#########
+
+@level 5-3
+@name Clockwork | Uhrwerk
+#########
+#*......#
+#.#RP/.<#
+#.#.....#
+#.....\.#
+#r.....##
+#########
+
+@level 5-4
+@name Swing Bridge | Drehbrücke
+@hint A turning mirror jams if turning it would drop the bridge under your feet. | Ein Drehspiegel klemmt, wenn das Drehen die Brücke unter deinen Füßen löschen würde.
+############
+#>.r.__.R..#
+#....__....#
+#.P..__.r..#
+#.\/.__....#
+#.R..__..*.#
+############
+
+@level 5-5
+@name Grinding Gear | Mahlwerk
+#########
+##....v.#
+#...*..r#
+#.#\#P..#
+#.../...#
+#....._.#
+#._...#.#
+#########
+
+@level 5-6
+@name Millstone | Mühlstein
+#########
+#.#...r.#
+#.#.....#
+#.\./#..#
+#..P....#
+#>.R.*..#
+#########
+
+@level 6-1
+@name Breakwater | Wellenbrecher
+##############
+#>..B~~..__..#
+#..S.~~..__..#
+#.PB/~~..__.*#
+#...\~~..__..#
+#.*..~~..__..#
+##############
+
+@level 6-2
+@name Lantern Gallery | Laternengalerie
+##############
+#>...~~..__..#
+#..S.~~..__..#
+#.P.B~~\.__.*#
+#.../~~..__..#
+#.*.B~~..__..#
+##############
+
+@level 6-3
+@name The Great Light | Großes Feuer
+##############
+######*#######
+#..~~~~~~~...#
+#..~.....~.r.#
+#*.~.....~...#
+#..~..^..~.*.#
+#..~~~~~~~...#
+###.SB.s.....#
+###...P.....##
+###########_##
+#######..../##
+#######*....##
+##############
